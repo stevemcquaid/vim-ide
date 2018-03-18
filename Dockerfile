@@ -25,7 +25,7 @@ RUN go get github.com/nsf/gocode
 RUN go get github.com/derekparker/delve/cmd/dlv
 RUN go get golang.org/x/tools/cmd/goimports
 RUN go get github.com/rogpeppe/godef
-RUN go get golang.org/x/tools/cmd/oracle
+RUN go get golang.org/x/tools/cmd/guru
 RUN go get golang.org/x/tools/cmd/gorename
 RUN go get github.com/golang/lint/golint
 RUN go get github.com/kisielk/errcheck

@@ -1,3 +1,3 @@
 # Vim Golang IDE
 
-A nice development container
+A nice development environment
