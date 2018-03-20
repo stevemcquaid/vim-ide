@@ -3,6 +3,7 @@ FROM    ubuntu:16.04
 MAINTAINER Steve McQuaid <steve@stevemcquaid.com>
 
 ENV     VERSION 0.0.1
+# ENV     TERM xterm-256color
 
 RUN     apt-get update && \
         apt-get upgrade -y
@@ -14,7 +15,7 @@ RUN     apt-get install -y \
         nano \
         git 
 
-RUN     apt-get install -y vim
+# RUN     apt-get install -y vim
 
 # Install python and update plugins
 RUN     apt-get install -y python3-dev python3-pip
@@ -25,7 +26,7 @@ RUN     pip3 install requests
 ENV     DEBIAN_FRONTEND noninteractive
 ENV     INITRD No
 ENV     LANG en_US.UTF-8
-ENV     GOVERSION 1.6.2
+ENV     GOVERSION 1.9.4
 ENV     GOROOT /opt/go
 ENV     GOPATH /root/.go
 RUN     cd /opt && \
@@ -35,7 +36,37 @@ RUN     cd /opt && \
         ln -s /opt/go/bin/go /usr/bin/ && \
         mkdir $GOPATH
 
-# Install Pathogen
+# Install VIM
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+# install packages
+RUN apt-get update                                                      && \
+    apt-get install -y sudo ncurses-dev libtolua-dev \
+            exuberant-ctags pandoc lynx                                 && \
+    ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
+    ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
+    cd /tmp
+# build and install vim
+RUN git clone https://github.com/vim/vim.git                            && \
+    cd vim                                                              && \
+    git checkout v8.0.1617                                              && \
+    ./configure --with-features=huge --enable-luainterp \
+        --enable-gui=no --without-x --prefix=/usr                       && \
+    make VIMRUNTIMEDIR=/usr/share/vim/vim80                             && \
+    make install
+# get go tools
+RUN go get golang.org/x/tools/cmd/godoc                                 && \
+    go get github.com/nsf/gocode                                        && \
+    go get github.com/derekparker/delve/cmd/dlv                         && \
+    go get golang.org/x/tools/cmd/goimports                             && \
+    go get github.com/rogpeppe/godef                                    && \
+    go get golang.org/x/tools/cmd/guru                                  && \
+    go get golang.org/x/tools/cmd/gorename                              && \
+    go get github.com/golang/lint/golint                                && \
+    go get github.com/kisielk/errcheck                                  && \
+    go get github.com/jstemmer/gotags
+
+## Install Pathogen
 RUN     mkdir -p /root/.vim/autoload /root/.vim/bundle
 RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
