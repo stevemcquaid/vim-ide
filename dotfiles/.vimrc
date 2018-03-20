@@ -45,11 +45,12 @@
 "  Vundle Plugins {{{1
 "" ==============
 
-    set rtp+=~/.vim/bundle/vundle/
+    set rtp+=$HOME/.vim/bundle/Vundle.vim
     call vundle#begin()
 
     " Required Plugins
-    Plugin 'gmarik/vundle'
+    " Plugin 'gmarik/vundle'
+    Plugin 'VundleVim/Vundle.vim'
 
     " Approved Plugins
     Plugin 'godlygeek/tabular'

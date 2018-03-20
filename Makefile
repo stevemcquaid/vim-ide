@@ -10,6 +10,10 @@ run:
 edit:
 	@bash -x scripts/edit.sh
 
+## Run a shell in container
+shell:
+	@bash -x scripts/shell.sh
+
 help:
 	@printf "Available targets:\n\n"
 	@awk '/^[a-zA-Z\-\_0-9%:\\]+:/ { \

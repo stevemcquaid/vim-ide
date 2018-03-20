@@ -70,6 +70,9 @@ RUN go get golang.org/x/tools/cmd/godoc                                 && \
 RUN     mkdir -p /root/.vim/autoload /root/.vim/bundle
 RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+# Install vundle
+RUN     git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
+
 # Install vim-go-ide
 RUN     git clone https://github.com/farazdagi/vim-go-ide.git /root/.vim_go_runtime
 RUN     bash /root/.vim_go_runtime/bin/install
@@ -78,18 +81,23 @@ RUN     python3 /root/.vim_go_runtime/bin/update_plugins
 # Install TagbarToggle
 RUN     apt-get install -y exuberant-ctags
 
-# RUN     vim +PluginInstall +qall
-
 # Copy files over
 ADD     dotfiles/.vimrc /.vimrc
 ADD     dotfiles/.bashrc /.bashrc
 ADD     dotfiles/.profile /.profile
+ADD     dotfiles/.vim/colors /root/.vim/colors
+ADD     dotfiles/.vim/bundle/ /root/.vim/bundle/
 
 # Install golang and deps for vim-go-ide
 # See line 24
-
+ENV     HOME /root
 ENV     TERM xterm-256color
+
 #CMD     ["vim", "-u", "/root/.vimrc.go"]
+
+RUN mkdir -p /src
+
+WORKDIR /src
 
 CMD     ["vim", "-u", "/.vimrc"]
 
