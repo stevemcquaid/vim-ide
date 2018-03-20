@@ -89,4 +89,7 @@ ADD     dotfiles/.profile /.profile
 # See line 24
 
 ENV     TERM xterm-256color
-CMD     ["vim", "-u", "/root/.vimrc.go"]
+#CMD     ["vim", "-u", "/root/.vimrc.go"]
+
+CMD     ["vim", "-u", "/.vimrc"]
+
