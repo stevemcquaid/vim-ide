@@ -1,69 +1,35 @@
-FROM golang
+FROM    ubuntu:16.04
 
-# set env
-ENV HOME /home/dev
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
+ENV     VERSION 0.0.1
 
-# install pagkages
-RUN apt-get update
-RUN apt-get install -y sudo ncurses-dev libtolua-dev exuberant-ctags pandoc lynx
+RUN     apt-get update -y
 
-RUN ln -s /usr/include/lua5.2/ /usr/include/lua
-RUN ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so
+RUN     apt-get upgrade -y
 
-# build and install vim
-RUN git clone https://github.com/vim/vim.git
-RUN cd vim && ./configure --with-features=huge --enable-luainterp --enable-gui=no --without-x --prefix=/usr
+RUN     apt-get install -y \
+        curl \
+        nmap \
+        nano \ 
+        git
 
-RUN cd vim && make -j`nproc` VIMRUNTIMEDIR=/usr/share/vim/vim74
-RUN cd vim && make install
+RUN     apt-get install -y vim
 
-# get go tools
-RUN go get golang.org/x/tools/cmd/godoc
-RUN go get github.com/nsf/gocode
-RUN go get github.com/derekparker/delve/cmd/dlv
-RUN go get golang.org/x/tools/cmd/goimports
-RUN go get github.com/rogpeppe/godef
-RUN go get golang.org/x/tools/cmd/guru
-RUN go get golang.org/x/tools/cmd/gorename
-RUN go get github.com/golang/lint/golint
-RUN go get github.com/kisielk/errcheck
-RUN go get github.com/jstemmer/gotags
+# Install Pathogen
+RUN     mkdir -p /root/.vim/autoload /root/.vim/bundle
+RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-RUN curl https://glide.sh/get | sh
+# Install vim-go-ide
+RUN     git clone https://github.com/farazdagi/vim-go-ide.git /root/.vim_go_runtime
+RUN     bash /root/.vim_go_runtime/bin/install
 
-RUN mv /go/bin/* /usr/local/go/bin
+# Install python and update plugins
+RUN     apt-get install -y python3-dev python3-pip; \
+        pip3 install --upgrade pip
+RUN     pip3 install requests
+RUN     python3 /root/.vim_go_runtime/bin/update_plugins
 
-# add dev user
+# Install TagbarToggle
+RUN     apt-get install -y exuberant-ctags
 
-RUN mkdir -p /project
-
-RUN adduser dev --disabled-password --gecos ""
-RUN chown -R dev:dev $HOME /go /project
-RUN echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-# cleanup
-RUN rm -rf /go/src/* /go/pkg
-
-RUN apt-get remove -y ncurses-dev
-RUN apt-get autoremove -y
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /vim
-
-USER dev
-
-# install pathogen
-RUN mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle && \
-curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-# install vim plugins
-RUN git clone http://git@github.com/farazdagi/vim-go-ide.git $HOME/.vim_go_runtime
-RUN sh $HOME/.vim_go_runtime/bin/install
-RUN mv $HOME/.vimrc.go $HOME/.vimrc
-# RUN vim +GoInstallBinaries +qall!
-
-VOLUME /project
-
-WORKDIR /project
-
-CMD /bin/bash -c /usr/bin/vim
+ENV     TERM xterm-256color
+CMD     ["vim", "-u", "/root/.vimrc.go"]
