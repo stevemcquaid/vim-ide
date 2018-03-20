@@ -2,6 +2,10 @@
 build:
 	@bash -x scripts/build.sh
 
+## Push container
+push:
+	@bash -x scripts/push.sh
+
 ## Run container locally
 run:
 	@bash -x scripts/run.sh
@@ -13,6 +17,8 @@ edit:
 ## Run a shell in container
 shell:
 	@bash -x scripts/shell.sh
+
+
 
 help:
 	@printf "Available targets:\n\n"
