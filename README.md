@@ -14,5 +14,4 @@ A nice VIM development environment in a container
 # Todo
     [x] get the .vimrc working
     [ ] merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
-
-
+    [ ] need to resolve conflicts with pathogen

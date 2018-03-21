@@ -78,6 +78,7 @@
     Plugin 'myusuf3/numbers.vim'
     Plugin 'ekalinin/Dockerfile.vim'
     Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'nathanaelkane/vim-indent-guides'
 
     call vundle#end()
     filetype plugin indent on
