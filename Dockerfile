@@ -69,7 +69,8 @@ RUN     go get golang.org/x/tools/cmd/godoc                                 && \
 
 ## Install Pathogen
 RUN     mkdir -p /root/.vim/autoload /root/.vim/bundle
-RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+RUN     curl -LSso /root/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 # Install vundle
 # RUN     git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
