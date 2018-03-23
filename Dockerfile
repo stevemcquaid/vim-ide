@@ -72,7 +72,7 @@ RUN     mkdir -p /root/.vim/autoload /root/.vim/bundle
 RUN     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Install vundle
-RUN     git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
+# RUN     git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
 
 # Install vim-go-ide
 RUN     git clone https://github.com/farazdagi/vim-go-ide.git /root/.vim_go_runtime
@@ -158,7 +158,7 @@ RUN     cd $UHOME/.vim/bundle/ \
 ADD     dotfiles/.vimrc /.vimrc
 ADD     dotfiles/.bashrc /.bashrc
 ADD     dotfiles/.profile /.profile
-ADD     dotfiles/.vim/colors /root/.vim/colors
+# ADD     dotfiles/.vim/colors /root/.vim/colors
 
 # ADD     dotfiles/.vim/bundle/ /root/.vim/bundle/
 

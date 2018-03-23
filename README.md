@@ -12,7 +12,10 @@ A nice VIM development environment in a container
     `ctrl+w, h, m` - Select NERDTree browser window, modify the file structure (add/delete/copy/move files or dirs)
 
 # Todo
-    [x] get the .vimrc working
-    [ ] merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
+    [ ] Get the .vimrc working with pathogen
+    [ ] Use pathogen to load a custom plugin
+    [ ] Load python autocomplete support with pathogen
+    [ ] Install vim-go-ide using pathogen
+    [ ] Merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
 
 
