@@ -43,4 +43,9 @@
 
     " Open NERDTree on startup, when no file has been specified
     autocmd VimEnter * if !argc() | NERDTree | endif
+    
+    :command! WQ wq
+    :command! Wq wq
+    :command! W w
+    :command! Q q
 
