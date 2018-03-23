@@ -155,12 +155,10 @@ RUN     cd $UHOME/.vim/bundle/ \
         && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
         && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils 
 
-ADD     dotfiles/.vimrc /.vimrc
-ADD     dotfiles/.bashrc /.bashrc
-ADD     dotfiles/.profile /.profile
-ADD     dotfiles/.vim/colors /root/.vim/colors
-
-# ADD     dotfiles/.vim/bundle/ /root/.vim/bundle/
+# ADD     dotfiles/.vimrc /.vimrc
+# ADD     dotfiles/.bashrc /.bashrc
+# ADD     dotfiles/.profile /.profile
+# ADD     dotfiles/.vim/colors /root/.vim/colors
 
 # Install golang and deps for vim-go-ide
 # See line 24
@@ -173,5 +171,5 @@ RUN     mkdir -p /src
 
 WORKDIR /src
 
-CMD     ["vim", "-u", "/.vimrc"]
+CMD     ["vim", "-u", "/root/.vimrc.go"]
 
