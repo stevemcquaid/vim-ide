@@ -13,7 +13,7 @@ RUN     apt-get install -y \
         wget \
         nmap \
         nano \
-        git 
+        git
 
 # RUN     apt-get install -y vim
 
