@@ -154,8 +154,8 @@ RUN     cd $UHOME/.vim/bundle/ \
         && git clone --depth 1 https://github.com/mbbill/undotree \
         && git clone --depth 1 https://github.com/myusuf3/numbers.vim \
         && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
-        && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils 
-
+        && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils \
+        && git clone --depth 1 https://github.com/tomtom/tcomment_vim
 ADD     dotfiles/.vimrc /.vimrc
 ADD     dotfiles/.vimrc2 /.vimrc2
 ADD     dotfiles/.bashrc /.bashrc
