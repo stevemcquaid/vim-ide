@@ -59,38 +59,38 @@
 "" ============= }}}
 "  Look and Feel {{{1
 "" =============
-    " Basics / Misc {{{2
-    " -------------
+" Basics / Misc {{{2
+" -------------
 
-        " Used for saving git and hg commits
-        filetype on
-        filetype off
+" Used for saving git and hg commits
+filetype on
+filetype off
 
-        " Set to allow you to backspace while back past insert mode
-        set backspace=2
+" Set to allow you to backspace while back past insert mode
+set backspace=2
 
-        " Increase History
-        set history=999
+" Increase History
+set history=999
 
-        " Enable numbers in the left column
-        set number
+" Enable numbers in the left column
+set number
 
-        " Give context to where the cursor is positioned in a file
-        set scrolloff=14
+" Give context to where the cursor is positioned in a file
+set scrolloff=14
 
-        " Use UTF-8 encoding
-        set encoding=utf-8 nobomb
+" Use UTF-8 encoding
+set encoding=utf-8 nobomb
 
-        " Hide buffers after they are abandoned
-        set hidden
+" Hide buffers after they are abandoned
+set hidden
 
-        " Disable files that don't need to be created
-        set noswapfile
-        set nobackup
-        set nowb
+" Disable files that don't need to be created
+set noswapfile
+set nobackup
+set nowb
 
-        " Auto Complete Menu
-        set completeopt=longest,menu
+" Auto Complete Menu
+set completeopt=longest,menu
 
     " }}}
     " Tabbing and Spaces {{{2
@@ -396,6 +396,5 @@
 "" }}}
 "" ==============
 
-" vim: foldmethod=marker foldmarker={{{,}}} ts=2 sts=2 sw=2 expandtab:
 "
 "
