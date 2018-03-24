@@ -5,11 +5,17 @@ A nice VIM development environment in a container
 # Usage
     `docker run -v $PWD:/src -it --rm stevemcquaid/$PACKAGE_NAME:latest` - Run vim using current dir as project source.
     `make help` - View available make-targets
+    `make build` - Build Dockerfile
+    `make run` - Run container in current directory
 
 # Useful commands
     `ctrl+w, h` - Select NERDTree browser window
     `ctrl+w, l` - Select source code window
     `ctrl+w, h, m` - Select NERDTree browser window, modify the file structure (add/delete/copy/move files or dirs)
+    `<<` - Indent line
+    `>>` - Outdent line
+    `u` - Undo
+    `ctrl+r` - Redo
 
 # Todo
     [x] Get the .vimrc working with pathogen
@@ -20,8 +26,9 @@ A nice VIM development environment in a container
     [ ] Get other language bindings to work well
     [ ] Disable space autocomplete globally (Disable other autocomplete engines)
     [ ] Get Deocomplete working
-    [ ] Change color scheme
+    [x] Change color scheme
     [ ] Get a kickass bottom bar
     [ ] Figure out byobu keybinding customization
-    [ ] Get vim comment and indentation keybindings working
+    [ ] Get vim comment keybindings working
+    [x] Get vim indentation keybindings working
     [ ] Figure out vim buffer/tab navigation
