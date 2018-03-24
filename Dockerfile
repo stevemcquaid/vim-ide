@@ -149,7 +149,7 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         # && git clone --depth 1 https://github.com/vim-scripts/AutoClose \
         && git clone --depth 1 https://github.com/bling/vim-airline \
         && git clone --depth 1 https://github.com/vim-airline/vim-airline-themes \
-        && git clone --depth 1 https://github.com/bling/vim-bufferline \
+        #&& git clone --depth 1 https://github.com/bling/vim-bufferline \
         && git clone --depth 1 https://github.com/airblade/vim-gitgutter \
         && git clone --depth 1 https://github.com/scrooloose/syntastic \
         && git clone --depth 1 https://github.com/plasticboy/vim-markdown \
