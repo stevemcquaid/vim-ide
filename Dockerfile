@@ -159,7 +159,8 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils \
         && git clone --depth 1 https://github.com/tomtom/tcomment_vim \
         && git clone --depth 1 https://github.com/vim-scripts/Satori-Color-Scheme.git \
-        && git clone --depth 1 https://github.com/sjl/badwolf.git
+        && git clone --depth 1 https://github.com/sjl/badwolf.git \
+        && git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git
 
 ADD     dotfiles/.bashrc $UHOME/.bashrc
 ADD     dotfiles/.profile $UHOME/.profile

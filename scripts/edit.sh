@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ex
 
-docker run -ti --rm -e TERM=$TERM -v $(pwd):/project/ rr32btg/vim-go-ide
+docker run -it --rm -e TERM=$TERM -v `pwd`:/src/ stevemcquaid/vim-ide:latest
