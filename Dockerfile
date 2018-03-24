@@ -167,7 +167,7 @@ ADD     dotfiles/ /dotfiles
 ADD     vim_runtime/vimsrc $VIM_RUNTIME/vimsrc
 ADD     vim_runtime/bin/install $VIM_RUNTIME/bin/install
 # Create .vimrc file
-RUN     bash -x $VIM_RUNTIME/bin/install
+RUN     bash $VIM_RUNTIME/bin/install
 
 
 ENV     HOME /root
