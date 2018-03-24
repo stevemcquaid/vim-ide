@@ -56,7 +56,7 @@ set wildmode=list:longest,full
 set cursorline
 
 " Completion options (select longest + show menu even if a single match is found)
-set completeopt=longest,menuone
+set completeopt=noselect,menuone,preview
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc

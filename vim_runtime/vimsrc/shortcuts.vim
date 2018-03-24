@@ -87,7 +87,7 @@ set nobackup
 set nowb
 
 " Auto Complete Menu
-set completeopt=longest,menu
+" set completeopt=noselect,menuone,preview
 
 " Tabbing and Spaces
 " ------------------
@@ -259,8 +259,8 @@ vnoremap <Space> za
 
 " Zencoding
 " ---------
-let g:user_zen_leader_key='<c-e>'
-let g:use_zen_complete_tag = 1
+" let g:user_zen_leader_key='<c-e>'
+" let g:use_zen_complete_tag = 1
 
 " Misc
 " ----
