@@ -13,9 +13,10 @@ A nice VIM development environment in a container
 
 # Todo
     [x] Get the .vimrc working with pathogen
-    [ ] Use pathogen to load a custom plugin
+    [x] Use pathogen to load a custom plugin
     [ ] Load python autocomplete support with pathogen
-    [ ] Install vim-go-ide using pathogen
-    [ ] Merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
-
-
+    [x] Install vim-go-ide using pathogen
+    [x] Merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
+    [ ] Get other language bindings to work well
+    [ ] Disable space autocomplete globally (Disable other autocomplete engines)
+    [ ] Get Deocomplete working
