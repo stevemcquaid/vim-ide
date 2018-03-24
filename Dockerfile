@@ -84,8 +84,10 @@ RUN     python3 /root/.vim_go_runtime/bin/update_plugins
 RUN     apt-get install -y exuberant-ctags
 
 ENV     UHOME=/root
+RUN     mkdir -p /root/.vim_runtime/bundle
+ENV     VIM_RUNTIME=/root/.vim_runtime
 # Copy files over
-#RUN cd $UHOME/.vim/bundle/ \
+#RUN cd $VIM_RUNTIME/bundle/ \
 #    && git clone --depth 1 https://github.com/pangloss/vim-javascript \
 #    && git clone --depth 1 https://github.com/scrooloose/nerdcommenter \
 #    && git clone --depth 1 https://github.com/godlygeek/tabular \
@@ -129,7 +131,7 @@ ENV     UHOME=/root
 
     # vimrc pluginsi
 
-RUN     cd $UHOME/.vim/bundle/ \
+RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/godlygeek/tabular \
         && git clone --depth 1 https://github.com/scrooloose/nerdtree \
         && git clone --depth 1 https://github.com/scrooloose/nerdcommenter \
@@ -156,24 +158,24 @@ RUN     cd $UHOME/.vim/bundle/ \
         && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
         && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils \
         && git clone --depth 1 https://github.com/tomtom/tcomment_vim
-ADD     dotfiles/.vimrc /.vimrc
-ADD     dotfiles/.vimrc2 /.vimrc2
-ADD     dotfiles/.bashrc /.bashrc
-ADD     dotfiles/.profile /.profile
-ADD     dotfiles/.vim/colors /root/.vim/colors
 
-# ADD     dotfiles/.vim/bundle/ /root/.vim/bundle/
+ADD     dotfiles/.bashrc $UHOME/.bashrc
+ADD     dotfiles/.profile $UHOME/.profile
+ADD     dotfiles/ /dotfiles
 
-# Install golang and deps for vim-go-ide
-# See line 24
+# Current vim definitions
+ADD     vim_runtime/vimsrc $VIM_RUNTIME/vimsrc
+ADD     vim_runtime/bin/install $VIM_RUNTIME/bin/install
+# Create .vimrc file
+RUN     bash -x $VIM_RUNTIME/bin/install
+
+
 ENV     HOME /root
 ENV     TERM xterm-256color
-
-#CMD     ["vim", "-u", "/root/.vimrc.go"]
 
 RUN     mkdir -p /src
 
 WORKDIR /src
 
-CMD     ["vim", "-u", "/.vimrc"]
+CMD     ["vim", "-u", "/root/.vim_runtime/.vimrc"]
 

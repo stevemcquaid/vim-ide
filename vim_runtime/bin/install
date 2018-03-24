@@ -1,0 +1,14 @@
+#!/bin/sh
+set +x
+
+cat > "$VIM_RUNTIME/.vimrc" <<EOF
+set runtimepath^="$VIM_RUNTIME"
+
+source $VIM_RUNTIME/vimsrc/basic.vim
+source $VIM_RUNTIME/vimsrc/filetypes.vim
+source $VIM_RUNTIME/vimsrc/plugins.vim
+source $VIM_RUNTIME/vimsrc/extended.vim
+source $VIM_RUNTIME/vimsrc/shortcuts.vim
+
+EOF
+
