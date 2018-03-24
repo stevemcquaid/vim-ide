@@ -162,9 +162,8 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/sjl/badwolf.git \
         && git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git
 
-ADD     dotfiles/.bashrc $UHOME/.bashrc
-ADD     dotfiles/.profile $UHOME/.profile
-ADD     dotfiles/ /dotfiles
+ADD     vim_runtime/.bashrc $UHOME/.bashrc
+ADD     vim_runtime/.profile $UHOME/.profile
 
 # Current vim definitions
 ADD     vim_runtime/vimsrc $VIM_RUNTIME/vimsrc
@@ -172,12 +171,10 @@ ADD     vim_runtime/bin/install $VIM_RUNTIME/bin/install
 # Create .vimrc file
 RUN     bash $VIM_RUNTIME/bin/install
 
-
 ENV     HOME /root
 ENV     TERM xterm-256color
 
 RUN     mkdir -p /src
-
 WORKDIR /src
 
 CMD     ["vim", "-u", "/root/.vim_runtime/.vimrc"]
