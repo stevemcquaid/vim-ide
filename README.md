@@ -24,4 +24,4 @@ A nice VIM development environment in a container
     [ ] Get a kickass bottom bar
     [ ] Figure out byobu keybinding customization
     [ ] Get vim comment and indentation keybindings working
-
+    [ ] Figure out vim buffer/tab navigation
