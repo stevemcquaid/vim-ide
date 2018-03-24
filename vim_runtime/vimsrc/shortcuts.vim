@@ -118,6 +118,7 @@ if has("gui_running")
 else
     set t_Co=256
 endif
+
 try
     colorscheme badwolf
 catch
