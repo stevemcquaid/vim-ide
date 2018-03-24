@@ -16,19 +16,21 @@ A nice VIM development environment in a container
     `>>` - Outdent line
     `u` - Undo
     `ctrl+r` - Redo
+    `,+c+<space>` - Toggle comment on selected line(s)
 
 # Todo
     [x] Get the .vimrc working with pathogen
     [x] Use pathogen to load a custom plugin
-    [ ] Load python autocomplete support with pathogen
     [x] Install vim-go-ide using pathogen
     [x] Merge the nice stuff of https://github.com/farazdagi/vim-go-ide into the .vimrc (Dockerfile#ln87-125)
-    [ ] Get other language bindings to work well
-    [ ] Disable space autocomplete globally (Disable other autocomplete engines)
-    [ ] Get Deocomplete working
+    [x] Disable space autocomplete globally (Disable other autocomplete engines)
     [x] Change color scheme
-    [ ] Get a kickass bottom bar
-    [ ] Figure out byobu keybinding customization
-    [ ] Get vim comment keybindings working
+    [x] Get a kickass bottom bar
+    [x] Get vim comment keybindings working
     [x] Get vim indentation keybindings working
+    [ ] Load python autocomplete support with pathogen
+    [ ] Get autocomplete with function parameters working (Deocomplete?)
+    [ ] Get other language bindings to work well
     [ ] Figure out vim buffer/tab navigation
+    [ ] Consolidate plugin customizations (-.vim files)
+    [ ] Always add trailing newline
