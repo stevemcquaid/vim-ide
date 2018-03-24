@@ -161,8 +161,6 @@ let g:NERDTreeShowHidden = 1
 " Open NERDTree on startup, when no file has been specified
 autocmd VimEnter * if !argc() | NERDTree | endif
 
-" Neocomplete
-" -----------
 " Syntastic
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
