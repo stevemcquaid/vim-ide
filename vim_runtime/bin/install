@@ -9,6 +9,7 @@ source $VIM_RUNTIME/vimsrc/filetypes.vim
 source $VIM_RUNTIME/vimsrc/plugins.vim
 source $VIM_RUNTIME/vimsrc/extended.vim
 source $VIM_RUNTIME/vimsrc/shortcuts.vim
+source $VIM_RUNTIME/vimsrc/colors.vim
 
 EOF
 

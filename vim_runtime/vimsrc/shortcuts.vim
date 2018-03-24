@@ -103,27 +103,6 @@ set autoindent
 exec "set listchars=tab:\uBB\uBB,trail:\u2716,nbsp:~"
 set list
 
-" Color Settings
-" --------------
-
-" Enable syntax highlighting
-syntax enable
-
-" Set font and color scheme for Gvim
-set guifont=Inconsolata\ for\ Powerline:h14
-if has("gui_running")
-    if has("gui_win32")
-        set guifont=Consolas:h10:cANSI
-    endif
-else
-    set t_Co=256
-endif
-
-try
-    colorscheme badwolf
-catch
-endtry
-
 " Persistent Undo
 " ---------------
 if v:version >= 703
@@ -140,9 +119,9 @@ endif
 "
 " Open file and goto previous location
 " ------------------------------------
-    autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
-                \|     exe "normal! g`\""
-                \|  endif
+autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
+            \|     exe "normal! g`\""
+            \|  endif
 
 "" ==============
 "  Plugin Settings
