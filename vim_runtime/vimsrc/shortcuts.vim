@@ -125,9 +125,8 @@
         try
             colorscheme badwolf
         catch
-            colorscheme darkzen
+            colorscheme satori
         endtry
-
         " }}}
     " Persistent Undo {{{2
     " ---------------

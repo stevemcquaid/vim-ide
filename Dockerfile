@@ -146,7 +146,7 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/tpope/vim-fugitive \
         && git clone --depth 1 https://github.com/tpope/vim-git \
         && git clone --depth 1 https://github.com/tpope/vim-commentary \
-        && git clone --depth 1 https://github.com/vim-scripts/AutoClose \
+        # && git clone --depth 1 https://github.com/vim-scripts/AutoClose \
         && git clone --depth 1 https://github.com/bling/vim-airline \
         && git clone --depth 1 https://github.com/vim-airline/vim-airline-themes \
         && git clone --depth 1 https://github.com/bling/vim-bufferline \
@@ -158,7 +158,8 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/ekalinin/Dockerfile.vim \
         && git clone --depth 1 https://github.com/MarcWeber/vim-addon-mw-utils \
         && git clone --depth 1 https://github.com/tomtom/tcomment_vim \
-        && git clone --depth 1 https://github.com/stevemcquaid/Satori-Color-Scheme.git 
+        && git clone --depth 1 https://github.com/vim-scripts/Satori-Color-Scheme.git \
+        && git clone --depth 1 https://github.com/sjl/badwolf.git
 
 ADD     dotfiles/.bashrc $UHOME/.bashrc
 ADD     dotfiles/.profile $UHOME/.profile

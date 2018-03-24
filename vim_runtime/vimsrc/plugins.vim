@@ -1,6 +1,6 @@
 " Load pathogen paths
-" call pathogen#infect('~/.vim_runtime/bundle/{}')
-call pathogen#infect()
+call pathogen#infect('/root/.vim_runtime/bundle/{}')
+" call pathogen#infect()
 call pathogen#helptags()
 
 "------------------------------------------------------------------------------
