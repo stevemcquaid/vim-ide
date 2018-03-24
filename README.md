@@ -20,3 +20,8 @@ A nice VIM development environment in a container
     [ ] Get other language bindings to work well
     [ ] Disable space autocomplete globally (Disable other autocomplete engines)
     [ ] Get Deocomplete working
+    [ ] Change color scheme
+    [ ] Get a kickass bottom bar
+    [ ] Figure out byobu keybinding customization
+    [ ] Get vim comment and indentation keybindings working
+
