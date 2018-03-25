@@ -3,7 +3,7 @@
 A nice VIM development environment in a container
 
 # Usage
-  * ```docker run -v `pwd`:/src -it --rm stevemcquaid/$PACKAGE_NAME:latest``` - Run vim using current dir as project source.
+  * ```docker run -v `pwd`:/src -it --rm stevemcquaid/vim-ide:latest``` - Run vim using current dir as project source.
   * `make help` - View available make-targets
   * `make build` - Build Dockerfile
   * `make run` - Run container in current directory
