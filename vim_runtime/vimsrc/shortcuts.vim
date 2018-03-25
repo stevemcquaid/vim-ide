@@ -138,6 +138,46 @@ let g:airline_theme = 'codedark'
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+
+" Airline statusline settings
+let g:airline_skip_empty_sections = 0
+let g:airline_section_a = airline#section#create(['mode','branch'])
+"let g:airline_section_b = 'hey there'
+"let g:airline_section_b = airline#section#create(['branch'])
+let g:airline_section_c = airline#section#create(['%t'])
+
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline_section_y = airline#section#create(['ffenc'])
+"let g:airline_section_z = airline#section#create(['%l'])
+call airline#parts#define_raw('linenr', '%l')
+call airline#parts#define_accent('linenr', 'bold')
+call airline#parts#define_raw('maxlinenr', '%L')
+call airline#parts#define_accent('maxlinenr', 'bold')
+
+let g:airline_section_z = airline#section#create(['%3p%%  ', 'linenr', '/', 'maxlinenr'])
+
+" function! AirlineStatusLineOverride(...)
+"     "call airline#extensions#apply_left_override('SpaceVimPlugins', '')
+"     " Alternatively, set the various w:airline_section variables
+"     let w:airline_section_a = 'SpaceVimPluginManager'
+"     let w:airline_section_b = ''
+"     let w:airline_section_c = ''
+"     "let w:airline_render_left = 1
+"     "let w:airline_render_right = 0
+" endfunction
+" call airline#add_statusline_func('AirlineStatusLineOverride')
+"
+" function! MyOverride(...)
+"     call g:airline:l.add_section('StatusLine' , ' all ')
+"     "call a:l.add_section('StatusLine' , ' all ')
+"     "call a:l.add_section('StatusLine' , ' all ')
+"     "call a:l.add_section('StatusLine' , ' all ')
+"     call g:airline:l.split()
+"     call g:airline:l.add_section('Error', ' %p%%')
+"     return l
+" endfunction
+" call airline#add_statusline_func('MyOverride')
+
 " vim-airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -160,11 +200,13 @@ let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
 let g:airline#extensions#readonly#symbol   = '⊘'
 let g:airline#extensions#linecolumn#prefix = '¶'
 let g:airline#extensions#paste#symbol      = 'ρ'
-let g:airline_symbols.linenr    = '␊'
-let g:airline_symbols.branch    = '⎇'
-let g:airline_symbols.paste     = 'ρ'
-let g:airline_symbols.paste     = 'Þ'
-let g:airline_symbols.paste     = '∥'
+"let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 "else
     "let g:airline#extensions#tabline#left_sep = ''

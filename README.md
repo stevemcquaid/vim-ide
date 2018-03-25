@@ -35,3 +35,4 @@ A nice VIM development environment in a container
   - [ ] Consolidate plugin customizations (-.vim files)
   - [ ] Always add trailing newline
   - [ ] Set markdown indentation to 2 spaces
+
