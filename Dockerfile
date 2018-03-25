@@ -158,7 +158,8 @@ RUN     cd $VIM_RUNTIME/bundle/ \
         && git clone --depth 1 https://github.com/tomtom/tcomment_vim \
         && git clone --depth 1 https://github.com/sjl/badwolf.git \
         && git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git \
-        && git clone --depth 1 https://github.com/ervandew/supertab.git
+        && git clone --depth 1 https://github.com/ervandew/supertab.git \
+        && git clone --depth 1 https://github.com/tomasiser/vim-code-dark.git
 
 ADD     vim_runtime/vimsrc $VIM_RUNTIME/vimsrc
 ADD     vim_runtime/bin/install $VIM_RUNTIME/bin/install

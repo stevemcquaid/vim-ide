@@ -131,7 +131,8 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:bufferline_echo = 0
-let g:airline_theme = 'badwolf'
+"let g:airline_theme = 'badwolf'
+let g:airline_theme = 'codedark'
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
