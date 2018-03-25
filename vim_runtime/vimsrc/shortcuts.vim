@@ -77,6 +77,8 @@ set scrolloff=14
 
 " Use UTF-8 encoding
 set encoding=utf-8 nobomb
+"set enc=utf-8
+"set renderoptions=type:directx,gamma:1.5,contrast:0.5,geom:1,renmode:5,taamode:1
 
 " Hide buffers after they are abandoned
 set hidden
