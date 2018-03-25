@@ -141,9 +141,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Airline statusline settings
 let g:airline_skip_empty_sections = 0
-let g:airline_section_a = airline#section#create(['mode','branch'])
+let g:airline_section_a = airline#section#create(['mode'])
 "let g:airline_section_b = 'hey there'
-"let g:airline_section_b = airline#section#create(['branch'])
+"let g:airline_section_b = airline#section#create(['hunk', 'branch'])
 let g:airline_section_c = airline#section#create(['%t'])
 
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -154,7 +154,7 @@ call airline#parts#define_accent('linenr', 'bold')
 call airline#parts#define_raw('maxlinenr', '%L')
 call airline#parts#define_accent('maxlinenr', 'bold')
 
-let g:airline_section_z = airline#section#create(['%3p%%  ', 'linenr', '/', 'maxlinenr'])
+let g:airline_section_z = airline#section#create(['%3p%% ', g:airline_symbols.linenr, '', 'linenr', '/', 'maxlinenr'])
 
 " function! AirlineStatusLineOverride(...)
 "     "call airline#extensions#apply_left_override('SpaceVimPlugins', '')
