@@ -238,7 +238,7 @@ let g:session_autoload = 1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
-let g:NERDTreeWinSize = 25
+let g:NERDTreeWinSize = 40
 
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let g:NERDTreeChDirMode = 2
@@ -442,4 +442,6 @@ silent! source ./.vimrc.local
 set rtp+=~/.vim/after/
 "" ==============
 "
+"Clipboard for copy/paste
+set clipboard=unnamedplus
 "
